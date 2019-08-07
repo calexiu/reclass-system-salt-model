@@ -7,6 +7,8 @@ parameters:
     server:
       role: ${_param:openstack_node_role}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         port: ${_param:openstack_rabbitmq_port}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}
