@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        pvaylov:
+          email: pvaylov@mirantis.com
+          enabled: true
+          full_name: Pavel Vaylov
+          home: /home/pvaylov
+          name: pvaylov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        pvaylov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHwOflKJpgQkjO90DxUWz8tdWWY9xMl4lauzPopOV+dnhJ7eyo78gGBdTi3xprguOTncktcZAss3GDapTblLbg7xoofy8qke180+LJVGFSJLACWg74e1UiuxQRv66MNjafCIy337D6RoxNwUSaf0DQGs5ainmxri/PFlnEHAYkri4mF16pKFuw5cFkAlDsLH17ok5S0Rk34zZVywVT4VsPttKbS7vzyejyL0sh8GyBfEXIRlrn6I6GjTWpI5R4rYPbbm2XfOFfQ6aYRzBReJLm8FcTHjXjYlm+LDXaAzQbaiV2W+dmCMnawPD3jZ7uQd9Ob9lYyD43V/wS7BAreIxv
+          user: ${linux:system:user:pvaylov}

@@ -14,7 +14,11 @@ classes:
 - system.openssh.server.team.members.osavatieiev
 - system.openssh.server.team.members.pbasov
 - system.openssh.server.team.members.pruzicka
+<<<<<<< HEAD   (cc12a4 Pass in Alerta authentication details for Alertmanager to se)
 - system.openssh.server.team.members.qwu
+=======
+- system.openssh.server.team.members.pvaylov
+>>>>>>> CHANGE (5ede29 Adding Pavel Vaylov)
 - system.openssh.server.team.members.sburns
 - system.openssh.server.team.members.vkuspits
 - system.openssh.server.team.members.yisakov
