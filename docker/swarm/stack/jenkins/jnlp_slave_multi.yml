@@ -15,7 +15,7 @@ parameters:
                 JENKINS_AGENT_NAME: slave02
                 JENKINS_UPDATE_SLAVE: 'true'
                 JENKINS_LOGIN: ${_param:jenkins_client_user}
-                JENKINS_PASSWORD: ${_param:jenkins_client_password}
+                JENKINS_PASSWORD_FILE: /run/secrets/jenkins-admin
                 JAVA_OPTS: "-Dhttp.proxyHost=${_param:docker_http_proxy} -Dhttp.nonProxyHosts=|jenkins_master ${_param:jenkins_slave_extra_opts}"
                 https_proxy: ${_param:docker_https_proxy}
                 http_proxy: ${_param:docker_http_proxy}
@@ -35,13 +35,15 @@ parameters:
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
                 - /var/lib/jenkins:/var/lib/jenkins
+              secrets:
+                - jenkins-admin
             slave03:
               environment:
                 JENKINS_URL: ${_param:jenkins_master_url}
                 JENKINS_AGENT_NAME: slave03
                 JENKINS_UPDATE_SLAVE: 'true'
                 JENKINS_LOGIN: ${_param:jenkins_client_user}
-                JENKINS_PASSWORD: ${_param:jenkins_client_password}
+                JENKINS_PASSWORD_FILE: /run/secrets/jenkins-admin
                 JAVA_OPTS: "-Dhttp.proxyHost=${_param:docker_http_proxy} -Dhttp.nonProxyHosts=|jenkins_master ${_param:jenkins_slave_extra_opts}"
                 https_proxy: ${_param:docker_https_proxy}
                 http_proxy: ${_param:docker_http_proxy}
@@ -61,3 +63,9 @@ parameters:
               - /var/run/docker.sock:/var/run/docker.sock
               - /usr/bin/docker:/usr/bin/docker:ro
               - /var/lib/jenkins:/var/lib/jenkins
+              secrets:
+                - jenkins-admin
+          secrets:
+            jenkins-admin:
+              external: true
+              value: ${_param:jenkins_client_password}
