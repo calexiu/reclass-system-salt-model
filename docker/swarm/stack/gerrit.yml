@@ -16,6 +16,7 @@ parameters:
     client:
       stack:
         gerrit:
+          version: '3.7'
           service:
             server:
               deploy:
@@ -30,12 +31,15 @@ parameters:
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
               depends_on:
                 - db
+              secrets:
+                - mysql-gerrit
+                - ldap-gerrit
               environment:
                 #GERRIT_INIT_ARGS: ""
                 DATABASE_TYPE: "mysql"
                 DB_PORT_3306_TCP_ADDR: ${_param:cluster_vip_address}
                 DB_ENV_MYSQL_USER: gerrit
-                DB_ENV_MYSQL_PASSWORD: ${_param:mysql_gerrit_password}
+                DB_ENV_MYSQL_PASSWORD_FILE: "/run/secrets/mysql-gerrit"
                 DB_ENV_MYSQL_DB: gerrit
                 AUTH_TYPE: ${_param:gerrit_auth_type}
                 LDAP_SERVER: ${_param:gerrit_ldap_server}
@@ -43,13 +47,10 @@ parameters:
                 LDAP_ACCOUNTBASE: ${_param:gerrit_ldap_account_base}
                 LDAP_GROUPBASE: ${_param:gerrit_ldap_group_base}
                 LDAP_USERNAME: ${_param:gerrit_ldap_bind_user}
-                LDAP_PASSWORD: ${_param:gerrit_ldap_bind_password}
+                LDAP_PASSWORD_FILE: "/run/secrets/ldap-gerrit"
                 WEBURL: ${_param:gerrit_public_host}
                 HTTPD_LISTENURL: ${_param:gerrit_http_listen_url}
                 HTTPD_REQUESTLOG: ${_param:gerrit_http_request_log}
-                GERRIT_ADMIN_SSH_PUBLIC: ${_param:gerrit_admin_public_key}
-                GERRIT_ADMIN_PWD: ${_param:gerrit_admin_password}
-                GERRIT_ADMIN_EMAIL: ${_param:gerrit_admin_email}
                 CANLOADINIFRAME: "true"
                 IGNORE_VERSIONCHECK: "false"
                 JAVA_OPTIONS: "-Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts ${_param:gerrit_extra_opts}"
@@ -57,11 +58,14 @@ parameters:
                 http_proxy: ${_param:docker_http_proxy}
                 no_proxy: ${_param:docker_no_proxy}
             db:
+              secrets:
+                - mysql-gerrit
+                - mysql-root
               environment:
                 MYSQL_USER: gerrit
-                MYSQL_PASSWORD: ${_param:mysql_gerrit_password}
                 MYSQL_DATABASE: gerrit
-                MYSQL_ROOT_PASSWORD: ${_param:mysql_admin_password}
+                MYSQL_ROOT_PASSWORD_FILE: "/run/secrets/mysql-root"
+                MYSQL_PASSWORD_FILE: "/run/secrets/mysql-gerrit"
                 MYSQL_START_TIMEOUT: 300
               deploy:
                 restart_policy:
@@ -71,3 +75,13 @@ parameters:
                 - ${_param:gerrit_db_publish_port}:3306
               volumes:
                 - /srv/volumes/mysql:/var/lib/mysql
+          secrets:
+            mysql-root:
+              external: true
+              value: ${_param:mysql_admin_password}
+            mysql-gerrit:
+              external: true
+              value: ${_param:mysql_gerrit_password}
+            ldap-gerrit:
+              external: true
+              value: ${_param:gerrit_ldap_bind_password}

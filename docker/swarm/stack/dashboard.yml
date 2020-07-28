@@ -10,6 +10,7 @@ parameters:
     client:
       stack:
         dashboard:
+          version: '3.7'
           service:
             grafana:
               deploy:
@@ -23,6 +24,18 @@ parameters:
                 GF_DATABASE_TYPE: ${_param:grafana_database_type}
                 GF_DATABASE_NAME: grafana
                 GF_DATABASE_USER: grafana
-                GF_DATABASE_PASSWORD: ${_param:grafana_database_password}
+                GF_DATABASE_PASSWORD__FILE: /run/secrets/grafana-database
                 GF_DATABASE_HOST: "${_param:grafana_database_host}:${_param:grafana_database_port}"
-                GF_SECURITY_ADMIN_PASSWORD: ${_param:grafana_admin_password}
+                GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana-admin
+              secrets:
+                - grafana-database
+                - grafana-admin
+          secrets:
+            grafana-database:
+              external: true
+              value: ${_param:grafana_database_password}
+            grafana-admin:
+              external: true
+              value: ${_param:grafana_admin_password}
+
+
