@@ -26,8 +26,8 @@ parameters:
     # OpenContrail
     opencontrail_docker_image_tag: "${_param:mcp_version}"
     # stacklight
-    # 6.5.0 version, from 11/29/2018, differ from latest upstream 6.5.0 - update next cycle
-    docker_image_alerta: "${_param:mcp_docker_registry}/mirantis/external/alerta-web:${_param:mcp_version}"
+    # locally forked v7.4.4, updated 2020-08-06
+    docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:${_param:mcp_version}"
     docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:${_param:mcp_version}"
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:${_param:mcp_version}"
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:${_param:mcp_version}"
@@ -110,9 +110,9 @@ parameters:
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: alertmanager:2019.2.4
-        - registry: ${_param:mcp_docker_registry}/mirantis/external
-          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
-          name: alerta-web:${_param:mcp_version}
+        - registry: ${_param:mcp_docker_registry}/openstack-docker
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
+          name: alerta:${_param:mcp_version}
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: pushgateway:${_param:mcp_version}
