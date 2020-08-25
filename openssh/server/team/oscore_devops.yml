@@ -18,6 +18,7 @@ classes:
 - system.openssh.server.team.members.vdrok
 - system.openssh.server.team.members.vmarkov
 - system.openssh.server.team.members.vsaienko
+- system.openssh.server.team.members.mpolenchuk
 parameters:
   _param:
     linux_system_user_sudo: true
