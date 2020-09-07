@@ -25,7 +25,7 @@ parameters:
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:2019.2.6"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:2019.2.6"
     # OpenContrail
-    opencontrail_docker_image_tag: "2019.2.10"
+    opencontrail_docker_image_tag: "2019.2.11"
     # stacklight
     # locally forked v7.4.4, updated 2020-08-06
     docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:2019.2.11"
