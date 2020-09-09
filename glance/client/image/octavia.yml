@@ -25,3 +25,7 @@ parameters:
           glanceng.get_image_owner_id:
             - ${_param:amphora_image_name}
             - 'admin_identity'
+          octavia_amphora_image:
+            mine_function: glancev2.image_get_details
+            name: ${_param:amphora_image_name}
+            cloud_name: 'admin_identity'
