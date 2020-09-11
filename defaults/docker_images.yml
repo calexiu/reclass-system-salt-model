@@ -75,7 +75,7 @@ parameters:
         - registry: ${_param:mcp_docker_registry}/mirantis/external/docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/docker
           name: compose:1.17.1
-        - registry: ${_param:mcp_docker_registry}/mirantis/external/osixia
+        - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: openldap:2019.2.11
         - registry: ${_param:mcp_docker_registry}/mirantis/external/library
