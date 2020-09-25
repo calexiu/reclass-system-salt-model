@@ -5,6 +5,7 @@ parameters:
     client:
       stack:
         ldap:
+          version: '3.7'
           service:
             server:
               networks:
@@ -18,6 +19,9 @@ parameters:
               ports:
                 - 1389:389
                 - 1636:636
+              secrets:
+                - openldap-admin
+                - openldap-config
               volumes:
                 - /srv/volumes/openldap/database:/var/lib/ldap
                 - /srv/volumes/openldap/config:/etc/ldap/slapd.d
@@ -31,8 +35,8 @@ parameters:
                 HOSTNAME: ldap01.${_param:openldap_domain}
                 LDAP_ORGANISATION: "${_param:openldap_organisation}"
                 LDAP_DOMAIN: "${_param:openldap_domain}"
-                LDAP_ADMIN_PASSWORD: ${_param:openldap_admin_password}
-                LDAP_CONFIG_PASSWORD: ${_param:openldap_config_password}
+                LDAP_ADMIN_PASSWORD_FILE: /run/secrets/openldap-admin
+                LDAP_CONFIG_PASSWORD_FILE: /run/secrets/openldap-config
                 LDAP_TLS: "true"
                 LDAP_TLS_VERIFY_CLIENT: try
                 LDAP_TLS_CIPHER_SUITE: NORMAL:-VERS-SSL3.0:+VERS-TLS1.2:+VERS-TLS1.1:+VERS-TLS1.0
@@ -55,7 +59,6 @@ parameters:
                 - ${_param:openldap_tls:certfile}:/container/service/ldap-client/assets/certs/drivetrain_ldap.crt:ro
                 - /etc/ssl/certs/ca-${_param:salt_minion_ca_authority}.pem:/container/service/ldap-client/assets/certs/ca.crt:ro
               environment:
-                PHPLDAPADMIN_LDAP_ADMIN_PASSWORD: ${_param:openldap_admin_password}
                 PHPLDAPADMIN_LDAP_HOSTS: "#PYTHON2BASH:[{'server': [{'server': [{'host': 'ldaps://${_param:cicd_control_address}', 'tls': False}]},{'login': [{'bind_id': 'cn=admin,${_param:openldap_dn}'},{'bind_pass': '$PHPLDAPADMIN_LDAP_ADMIN_PASSWORD'}]}]}]"
                 PHPLDAPADMIN_LDAP_CLIENT_TLS: "true"
                 PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME: ca.crt
@@ -73,3 +76,11 @@ parameters:
               driver: overlay
               driver_opts:
                 encrypted: 1
+          secrets:
+            openldap-admin:
+              external: true
+              value: ${_param:openldap_admin_password}
+            openldap-config:
+              external: true
+              value: ${_param:openldap_config_password}
+

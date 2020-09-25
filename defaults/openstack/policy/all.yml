@@ -1448,6 +1448,13 @@ parameters:
       "load-balancer:read-quota-global": "rule:load-balancer:global_observer or role:load-balancer_quota_admin or rule:load-balancer:admin"
       "load-balancer:write-quota": "role:load-balancer_quota_admin or rule:load-balancer:admin"
       "os_load-balancer_api:loadbalancer:put_failover": "rule:load-balancer:admin"
+    panko_default_policy_ocata: {}
+    panko_default_policy_pike:
+      "context_is_admin": "role:admin"
+      "segregation": "rule:context_is_admin"
+      "telemetry:events:index": ""
+      "telemetry:events:show": ""
+    panko_default_policy_queens: ${_param:panko_default_policy_pike}
     telemetry_default_policy_ocata: {}
     telemetry_default_policy_pike:
       "context_is_admin": "role:admin"

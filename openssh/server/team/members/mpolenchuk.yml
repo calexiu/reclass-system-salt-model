@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mpolenchuk:
+          enabled: true
+          name: mpolenchuk
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Michael Polenchuk
+          home: /home/mpolenchuk
+          email: mpolenchuk@mirantis.com
+  openssh:
+    server:
+      user:
+        mpolenchuk:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC18NFHig4QQPBgFY7s3MOzGRYHOFY6Fzu1lBSYoH6Ie6u2AY7aS149uSUHJPuzTQ5uEsxXqSlfOOggwrB7sOb1w+sCUhUJN5SyvPl1tnQ5mQ96DvMGtFwuTQwQJ5SY/XXIKCKn59G0AMyOmajDsHdeUFhwj1u8CWnEM7QHxuAxDxbExNyWe0yytsdbIelI1xsyX3qWNsJz/9BSnD6IKKtB0ca0lG+qWmO8eQ/A/pqE28E6kh25mqsEk38gTvBgJsaociU75WTEQYcxhVy4+/ZoZeW/ASDC+Raaq8b7gbrOo8EKdgpWk1MAdomfGfoxJ2HEVI08vLR3xBd0IjbC0NFN root@desktop
+          user: ${linux:system:user:mpolenchuk}

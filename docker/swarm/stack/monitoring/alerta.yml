@@ -8,6 +8,7 @@ parameters:
     client:
       stack:
         monitoring:
+          version: '3.7'
           service:
             alerta:
               networks:
@@ -27,6 +28,13 @@ parameters:
                 - ${prometheus:alerta:config_dir}/alertad.conf:/app/alertad.conf
               environment:
                 ADMIN_USERS: ${_param:alerta_admin_username}
-                ADMIN_PASSWORD: ${_param:alerta_admin_password}
+                ADMIN_PASSWORD_FILE: "/run/secrets/alerta"
                 MONGO_URI: ${_param:alerta_mongodb_uri}
                 PLUGINS: ""
+              secrets:
+                - alerta
+          secrets:
+            alerta:
+              external: true
+              value: ${_param:alerta_admin_password}
+
