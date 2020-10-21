@@ -29,6 +29,7 @@ parameters:
               environment:
                 ADMIN_USERS: ${_param:alerta_admin_username}
                 ADMIN_PASSWORD_FILE: "/run/secrets/alerta"
+                AUTH_REQUIRED: "True"
                 MONGO_URI: ${_param:alerta_mongodb_uri}
                 PLUGINS: ""
               secrets:
