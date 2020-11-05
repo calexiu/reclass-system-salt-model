@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        srudyka:
+          email: srudyka@mirantis.com
+          enabled: true
+          full_name: Sergii Rudyka
+          home: /home/srudyka
+          name: srudyka
+          email: srudyka@mirantis.com
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        srudyka:
+          enabled: true
+          public_keys:
+          - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGps6KXDEuWoTRAMkCPQI/sDaLcPwnq0fDgKSTjqBd1N 
+          user: ${linux:system:user:srudyka}
