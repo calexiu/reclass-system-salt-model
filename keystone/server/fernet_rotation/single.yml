@@ -1,3 +1,6 @@
+classes:
+- system.backupninja.client.single
+- system.openssh.client.root
 parameters:
   _param:
     fernet_rotation_driver: 'rsync'
@@ -30,3 +33,10 @@ parameters:
           user: keystone
           hour: 0
           minute: 0
+  backupninja:
+    client:
+      target:
+        home_dir: /srv/volumes/backup/backupninja
+        engine: rsync
+        engine_opts: "-av --delete --recursive --safe-links"
+        host: ${_param:infra_kvm_node03_address}
