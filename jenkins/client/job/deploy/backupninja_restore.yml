@@ -30,3 +30,6 @@ parameters:
             RESTORE_DOGTAG:
               type: boolean
               default: 'true'
+            RESTORE_KEYSTONE_CREDENTIAL_KEYS:
+              type: boolean
+              default: 'true'
