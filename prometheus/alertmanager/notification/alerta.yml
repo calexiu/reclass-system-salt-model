@@ -18,3 +18,7 @@ parameters:
               alerta:
                 url: "http://${_param:alertmanager_notification_alerta_host}:${_param:alertmanager_notification_alerta_port}/api/webhooks/prometheus"
                 send_resolved: true
+                http_config:
+                  basic_auth:
+                    username: "${_param:alerta_admin_username}"
+                    password: "${_param:alerta_admin_password}"
