@@ -1,5 +1,5 @@
 classes:
-  - service.prometheus.alerta
+- service.prometheus.alerta
 parameters:
   prometheus:
     alerta:
