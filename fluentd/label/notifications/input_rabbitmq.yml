@@ -85,7 +85,7 @@ parameters:
                 enable_ruby: true
                 record:
                   - name: notification_type
-                    value: '${fluentd:dollar}{ record["payload"]["eventType"] && record["payload"]["eventTime"] ? "audit" : "notification" }'
+                    value: '${fluentd:dollar}{ record["payload"].key?("eventType") && record["payload"].key?("eventTime") ? "audit" : "notification" }'
             match:
               rewrite_message_tag:
                 tag: raw_notifications
