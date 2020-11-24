@@ -32,10 +32,6 @@ parameters:
               type: string
               description: These OSDs at HOST will be removed (comma-separated list)
               default: '*'
-            ADMIN_HOST:
-              type: string
-              description: Host with admin keyring and access to cluster management
-              default: 'cmn01*'
             CLUSTER_FLAGS:
               type: string
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
@@ -43,10 +39,10 @@ parameters:
               type: boolean
               default: 'true'
               description: Wait for healthy during pipeline
-            CLEANDISK:
+            FAST_WIPE:
               type: boolean
-              default: 'false'
-              description: Clean data/block partitions
+              default: 'true'
+              description: Wipe only partition table of each removed disk. Otherwise whole disk will be wiped. Only relevant with osd hosts
             CLEAN_ORPHANS:
               type: boolean
               default: 'false'

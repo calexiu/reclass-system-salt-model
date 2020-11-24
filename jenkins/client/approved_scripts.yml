@@ -169,3 +169,4 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods max java.util.Collection
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods removeElement java.util.Collection java.lang.Object

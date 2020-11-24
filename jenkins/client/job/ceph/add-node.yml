@@ -16,7 +16,6 @@ parameters:
             credentials: ${_param:jenkins_gerrit_credentials}
             script: ceph-add-node.groovy
           param:
-            # general parameters
             SALT_MASTER_URL:
               type: string
               description: URL of Salt master
@@ -27,9 +26,17 @@ parameters:
               default: salt
             HOST:
               type: string
-              description: OSD HOST that will be added to Ceph cluster (rgw04*)
-              default: 'rgw04*'
-            HOST_TYPE:
+              description: OSD HOST that will be added to Ceph cluster (e.g. rgw04*)
+              default: ''
+            CLUSTER_FLAGS:
               type: string
-              description: Type of Ceph node to be added. Valid values are mon/osd/rgw
-              default: 'rgw'
+              description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
+              default: ''
+            OSD_ONLY:
+              type: boolean
+              default: 'false'
+              description: Add only missing OSDs while keep HOST itself intact
+            USE_UPMAP:
+              type: boolean
+              default: 'false'
+              description: Use upmap balancer to smooth data migrations
