@@ -1,9 +1,17 @@
+classes:
+- system.backupninja.client.single
+- system.openssh.client.root
 parameters:
   _param:
+    openstack_control_node01_hostname: ctl01
     fernet_rotation_driver: 'rsync'
     credential_rotation_driver: 'rsync'
   keystone:
     server:
+      initial_data:
+        home_dir: /srv/volumes/backup/backupninja
+        host: ${_param:openstack_control_node01_hostname}.${_param:cluster_domain}
+        source: ${_param:infra_kvm_node03_address}
       tokens:
         fernet_rotation_driver: ${_param:fernet_rotation_driver}
       credential:
@@ -30,3 +38,10 @@ parameters:
           user: keystone
           hour: 0
           minute: 0
+  backupninja:
+    client:
+      target:
+        home_dir: /srv/volumes/backup/backupninja
+        engine: rsync
+        engine_opts: "-av --delete --recursive --safe-links"
+        host: ${_param:infra_kvm_node03_address}

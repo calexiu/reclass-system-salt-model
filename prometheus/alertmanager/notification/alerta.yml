@@ -16,5 +16,5 @@ parameters:
             enabled: true
             webhook_configs:
               alerta:
-                url: "http://${_param:alertmanager_notification_alerta_host}:${_param:alertmanager_notification_alerta_port}/api/webhooks/prometheus"
+                url: "http://${_param:alertmanager_notification_alerta_host}:${_param:alertmanager_notification_alerta_port}/api/webhooks/prometheus?api-key=${_param:alerta_admin_key}"
                 send_resolved: true

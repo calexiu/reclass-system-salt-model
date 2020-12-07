@@ -32,6 +32,9 @@ parameters:
             BACKUP_DOGTAG:
               type: boolean
               default: 'true'
+            BACKUP_KEYSTONE_CREDENTIAL_KEYS:
+              type: boolean
+              default: 'true'
           trigger:
             timer:
               enabled: false

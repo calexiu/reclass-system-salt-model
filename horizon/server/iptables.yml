@@ -36,7 +36,7 @@ parameters:
                   action: REJECT
                 501:
                   # 501-503 disable private networks
-                  rule: --dst 10.0.0.0/16
+                  rule: --dst 10.0.0.0/8
                   action: REJECT
                 502:
                   rule: --dst 172.16.0.0/12

@@ -27,8 +27,10 @@ parameters:
                 - ${prometheus:alerta:config_dir}/alerta.conf:/web/config.js
                 - ${prometheus:alerta:config_dir}/alertad.conf:/app/alertad.conf
               environment:
+                ADMIN_KEY: ${_param:alerta_admin_key}
                 ADMIN_USERS: ${_param:alerta_admin_username}
                 ADMIN_PASSWORD_FILE: "/run/secrets/alerta"
+                AUTH_REQUIRED: "True"
                 MONGO_URI: ${_param:alerta_mongodb_uri}
                 PLUGINS: ""
               secrets:
