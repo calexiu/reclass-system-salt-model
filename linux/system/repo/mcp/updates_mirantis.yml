@@ -1,0 +1,9 @@
+parameters:
+  linux:
+    system:
+      repo:
+        updates_mirantis:
+          source: "deb https://${_param:updates_mirantis_login}:${_param:updates_mirantis_password}@${_param:updates_mirantis_host}/${_param:updates_mirantis_version} xenial main"
+          key_url: "https://${_param:updates_mirantis_login}:${_param:updates_mirantis_password}@${_param:updates_mirantis_host}/${_param:updates_mirantis_version}/${_param:updates_mirantis_key_file}"
+          architectures: amd64
+          clean_file: True
