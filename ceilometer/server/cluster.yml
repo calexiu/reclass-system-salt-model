@@ -36,6 +36,8 @@ parameters:
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}

@@ -25,7 +25,8 @@ parameters:
         tenant: service
       message_queue:
         engine: rabbitmq
-        host: ${_param:cluster_vip_address}
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         port: 5672
         user: openstack
         password: ${_param:rabbitmq_openstack_password}

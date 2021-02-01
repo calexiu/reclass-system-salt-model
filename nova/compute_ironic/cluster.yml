@@ -28,6 +28,8 @@ parameters:
       service_user:
         enabled: ${_param:nova_service_user_enabled}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         engine: rabbitmq
         port: 5672
         user: openstack

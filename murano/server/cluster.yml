@@ -29,6 +29,8 @@ parameters:
         user: ${_param:keystone_murano_username}
         password: ${_param:keystone_murano_password}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         engine: rabbitmq
         port: 5672
         members:

@@ -4,6 +4,8 @@ parameters:
   cinder:
     volume:
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         ha_queues: true
       enabled: true
       notification: true
