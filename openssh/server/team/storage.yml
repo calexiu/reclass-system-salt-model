@@ -1,6 +1,8 @@
 classes:
 - system.openssh.server.team.members.deprecated.akiseleva
 - system.openssh.server.team.members.deprecated.mvollman
+- system.openssh.server.team.members.deprecated.mjedynski
+- system.openssh.server.team.members.degorenko
 - system.openssh.server.team.members.mlos
-- system.openssh.server.team.members.mjedynski
+- system.openssh.server.team.members.prazumovsky
 - system.openssh.server.team.members.tjaroszyk
