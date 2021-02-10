@@ -196,3 +196,4 @@ parameters:
             814: --include='universe/o/opensaml2' # PROD-35464 Req for SAML2/Federation
             815: --include='universe/x/xmltooling' # PROD-35464 Req for SAML2/Federation
             816: --include='main/a/accountsservice' # PROD-36001 Req for cfg01 upgrade
+            817: --include='main/l/linux/linux-tools-common' # PROD-36124 Req for tooling upgrade
