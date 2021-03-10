@@ -62,7 +62,8 @@ parameters:
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq
-        host: ${_param:single_address}
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'

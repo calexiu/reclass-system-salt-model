@@ -26,6 +26,7 @@ parameters:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
         host: ${_param:openstack_message_queue_address}
         port: ${_param:openstack_rabbitmq_port}
         x509:

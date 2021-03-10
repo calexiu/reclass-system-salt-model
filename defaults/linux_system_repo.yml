@@ -7,6 +7,10 @@ parameters:
     linux_system_repo_update_url: http://mirror.mirantis.com/update/${_param:mcp_version}/
     # Global-hotfix
     linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:mcp_version}/
+    # Updates.mirantis
+    updates_mirantis_host: updates.mirantis.com
+    updates_mirantis_version: stable
+    updates_mirantis_key_file: updates_mirantis.key
     # Per repos
     linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/
     linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/

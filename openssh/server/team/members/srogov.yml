@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        srogov:
+          email: srogov@mirantis.com
+          enabled: true
+          full_name: Stepan Rogov
+          home: /home/srogov
+          name: srogov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        srogov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjlSWDL7hIgLbklKBVXIyNKxi3U4cbUSxPDFgUAf1Fp0mz/6o5jUuJjGMVtAYvQFBQbi8Hn0wX2bdubyFnD21M+9jQL05fqQGsG/JPq+u/XYj+k+WVLyrjTWMoL4xs9vAwjAJfDaWZ4BDwfWCAVe86OzjuFo2LvDl08YJpLTwwCqpUR9htvZGxR9UvJr7JV2xNqD9xUl3TK0n9Fo0aWbWiszImRO6KLRASKw8x0GgNjzP5qGI02x34tW9nL1yTjRxMweVyyh91OWdGLTp1ghixb2ZRJWPQ99UaWKv0pGCBbyjjmQCmODffSstIcFpGmqqZ8Y6aP6ESOYPXJccAvc0/ chlorum@chlorum
+          user: ${linux:system:user:srogov}

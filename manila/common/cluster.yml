@@ -15,6 +15,7 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
         host: ${_param:openstack_message_queue_address}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}

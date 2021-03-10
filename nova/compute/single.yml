@@ -49,7 +49,8 @@ parameters:
         enabled: ${_param:nova_service_user_enabled}
       message_queue:
         engine: rabbitmq
-        host: ${_param:control_address}
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         port: ${_param:openstack_rabbitmq_port}
         user: openstack
         password: ${_param:rabbitmq_openstack_password}

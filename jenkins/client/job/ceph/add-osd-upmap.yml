@@ -28,7 +28,7 @@ parameters:
               default: salt
             HOST:
               type: string
-              description: OSD HOST that will be added to Ceph cluster (rgw04*)
+              description: OSD HOST that will be added to Ceph cluster
               default: 'osd*'
             CLUSTER_FLAGS:
               type: string

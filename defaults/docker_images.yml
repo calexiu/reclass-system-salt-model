@@ -5,27 +5,27 @@ parameters:
     # 2.6.2 version, from 12/18/2108, differ from latest 2.6.2 upstream - update next cycle
     docker_image_registry:   "${_param:mcp_docker_registry}/mirantis/external/registry:2019.2.6"
     docker_image_visualizer: "${_param:mcp_docker_registry}/mirantis/external/visualizer:2019.2.6"
-    docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/cicd/openldap:2019.2.11"
-    docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:9.6.10"
+    docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/cicd/openldap:2019.2.13"
+    docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:9.6.20"
     # 3.4.13, from Feb 15, differ from 3.4.13 upstream verison, from March 14 - update next cycle
     docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/mongo:2019.2.6"
     ###
-    # phpldapadmin:0.6.12
-    docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:2019.2.9"
+    # phpldapadmin:0.9.0
+    docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:2019.2.13"
     # gerrit:2.15.18
     docker_image_gerrit: "${_param:mcp_docker_registry}/mirantis/cicd/gerrit:2019.2.11"
-    # mysql:5.6.48
-    docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:2019.2.10"
+    # mysql:5.6.51
+    docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:2019.2.13"
     # jenkins:2.204.3
-    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.9"
+    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.13"
     docker_image_jenkins_jnlp_slave: "${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:2019.2.11"
     # TODO: fix tag
-    docker_image_jenkins_ssh_slave: "${_param:mcp_docker_registry}/mirantis/cicd/ssh-slave:2019.2.10"
+    docker_image_jenkins_ssh_slave: "${_param:mcp_docker_registry}/mirantis/cicd/ssh-slave:2019.2.13"
     # model-generator
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:2019.2.6"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:2019.2.6"
     # OpenContrail
-    opencontrail_docker_image_tag: "2019.2.12"
+    opencontrail_docker_image_tag: "2019.2.13"
     # stacklight
     # locally forked v7.4.4, updated 2020-08-06
     docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:2019.2.11"
@@ -47,16 +47,16 @@ parameters:
     docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
     # CVP
-    docker_image_cvp_sanity_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.12"
+    docker_image_cvp_sanity_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.13"
     docker_image_cvp_tempest: "${_param:mcp_docker_registry}/mirantis/cicd/ci-tempest:${_param:openstack_version}"
     docker_image_cvp_shaker_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:2019.2.3"
     docker_image_cvp_rally: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-rally:2019.2.5"
     docker_image_cvp_xrally: "${_param:mcp_docker_registry}/mirantis/external/xrally/xrally-openstack:0.11.2"
     # aptly
     docker_image_aptly:
-      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.9"
-      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.9"
-      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.9"
+      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.13"
+      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.13"
+      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.13"
 
     # List of images, to be placed into offline image, during separate image build process
     # WARNING: registry|target_registry and names - must be exactly same as list above!
@@ -76,33 +76,33 @@ parameters:
           name: compose:1.17.1
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: openldap:2019.2.11
+          name: openldap:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/external/library
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/library
-          name: postgres:9.6.10
+          name: postgres:9.6.20
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: phpldapadmin:2019.2.9
+          name: phpldapadmin:2019.2.13
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly:2019.2.9
+          name: aptly:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-public:2019.2.9
+          name: aptly-public:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-publisher:2019.2.9
+          name: aptly-publisher:2019.2.13
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: jnlp-slave:2019.2.11
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: ssh-slave:2019.2.10
+          name: ssh-slave:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jenkins:2019.2.9
+          name: jenkins:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: gerrit:2019.2.11
@@ -182,14 +182,14 @@ parameters:
           name: cvp-shaker:2019.2.3
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
-          name: cvp-sanity-checks:2019.2.12
+          name: cvp-sanity-checks:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/external/xrally
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/xrally
           name: xrally-openstack:0.11.2
           #
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: mysql:2019.2.10
+          name: mysql:2019.2.13
         - registry: ${_param:mcp_docker_registry}/mirantis/external
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external
           name: mongo:2019.2.6

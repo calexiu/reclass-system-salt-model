@@ -33,7 +33,8 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
-        host: ${_param:control_address}
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
       network:
         engine: neutron
         region: ${_param:openstack_region}

@@ -37,6 +37,8 @@ parameters:
         password: ${_param:keystone_neutron_password}
         region: ${_param:openstack_region}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
       ovn_ctl_opts:

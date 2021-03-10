@@ -54,6 +54,8 @@ parameters:
         api:
           address: ${_param:single_address}
       message_queue:
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
+        host: ${_param:openstack_message_queue_address}
         engine: rabbitmq
         port: ${_param:openstack_rabbitmq_port}
         members:

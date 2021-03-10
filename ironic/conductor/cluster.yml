@@ -24,6 +24,8 @@ parameters:
         ssl:
           enabled: ${_param:galera_ssl_enabled}
       message_queue:
+        host: ${_param:openstack_message_queue_address}
+        use_vip_address: ${_param:openstack_rabbitmq_standalone_mode}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}

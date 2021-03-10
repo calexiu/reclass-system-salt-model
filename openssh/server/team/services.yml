@@ -14,11 +14,13 @@ classes:
 - system.openssh.server.team.members.osavatieiev
 - system.openssh.server.team.members.pbasov
 - system.openssh.server.team.members.pruzicka
-- system.openssh.server.team.members.qwu
+- system.openssh.server.team.members.pvaylov
 - system.openssh.server.team.members.sburns
+- system.openssh.server.team.members.srogov
 - system.openssh.server.team.members.vkuspits
 - system.openssh.server.team.members.yisakov
 - system.openssh.server.team.members.wnawrot
+- system.openssh.server.team.members.qwu
 - system.openssh.server.team.members.srudyka
 parameters:
   _param:
