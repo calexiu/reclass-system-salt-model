@@ -2,10 +2,10 @@ parameters:
   jenkins:
     client:
       job:
-        ceph-add-osd-upmap:
+        ceph-add-osd:
           type: workflow-scm
           concurrent: true
-          display_name: "Ceph - add osd ( upmap )"
+          display_name: "Ceph - add osd"
           description: "This pipeline requires ceph luminous version, all clients must be upgraded to luminous version to proceed."
           discard:
             build:
