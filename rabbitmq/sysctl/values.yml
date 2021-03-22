@@ -1,0 +1,6 @@
+parameters:
+  linux:
+    system:
+      kernel:
+        sysctl:
+          fs.file-max: 248320

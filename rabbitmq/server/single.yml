@@ -4,4 +4,4 @@ classes:
 parameters:
   rabbitmq:
     server:
-      ulimit: 24576
+      ulimit: 49152
