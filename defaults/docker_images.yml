@@ -17,7 +17,7 @@ parameters:
     # mysql:5.6.51
     docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:2019.2.13"
     # jenkins:2.204.3
-    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.13"
+    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.14"
     docker_image_jenkins_jnlp_slave: "${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:2019.2.14"
     # TODO: fix tag
     docker_image_jenkins_ssh_slave: "${_param:mcp_docker_registry}/mirantis/cicd/ssh-slave:2019.2.14"
@@ -35,7 +35,7 @@ parameters:
     # docker-kaas-local.artifactory.mirantis.com/stacklight/prometheus-es-exporter:v0.5.1-20210323132924
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.14"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:2019.2.14"
-    # docker-kaas-local.artifactory.mirantis.com/stacklight/sf-reporter:v0.1-20201216142628
+    # mirantis.azurecr.io/stacklight/sf-reporter:v0.1-20201216142628
     docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/sf-reporter:2019.2.14"
     docker_image_prometheus_gainsight_elasticsearch: "${_param:mcp_docker_registry}/openstack-docker/gainsight_elasticsearch:2019.2.6"
     docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus-relay:2019.2.11"
@@ -58,9 +58,9 @@ parameters:
     docker_image_cvp_xrally: "${_param:mcp_docker_registry}/mirantis/external/xrally/xrally-openstack:0.11.2"
     # aptly
     docker_image_aptly:
-      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.13"
-      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.13"
-      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.13"
+      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.14"
+      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.14"
+      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.14"
 
     # List of images, to be placed into offline image, during separate image build process
     # WARNING: registry|target_registry and names - must be exactly same as list above!
@@ -90,13 +90,13 @@ parameters:
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly:2019.2.13
+          name: aptly:2019.2.14
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-public:2019.2.13
+          name: aptly-public:2019.2.14
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-publisher:2019.2.13
+          name: aptly-publisher:2019.2.14
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
@@ -106,7 +106,7 @@ parameters:
           name: ssh-slave:2019.2.14
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jenkins:2019.2.13
+          name: jenkins:2019.2.14
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: gerrit:2019.2.11
