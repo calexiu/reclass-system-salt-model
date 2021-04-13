@@ -25,7 +25,7 @@ parameters:
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:2019.2.6"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:2019.2.6"
     # OpenContrail
-    opencontrail_docker_image_tag: "2019.2.13"
+    opencontrail_docker_image_tag: "2019.2.14"
     # stacklight
     # docker-kaas-local.artifactory.mirantis.com/stacklight/alerta-web:8.4.1-20210312131419
     docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta-web:2019.2.14"
