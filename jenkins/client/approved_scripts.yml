@@ -85,15 +85,12 @@ parameters:
         - method java.util.stream.Stream collect java.util.stream.Collector
         - method jenkins.model.Jenkins getItemByFullName java.lang.String
         - method jenkins.model.Jenkins getPluginManager
-        - method org.jenkinsci.plugins.workflow.cps.CpsClosure2 print java.lang.Object
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun finish hudson.model.Result java.lang.Throwable
         - method org.jenkinsci.plugins.workflow.steps.FlowInterruptedException getCauses
         - method org.jenkinsci.plugins.workflow.support.actions.EnvironmentAction getEnvironment
         - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper build
         - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild
-        - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getResult
-        - method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper setResult java.lang.String
         - new groovy.json.JsonBuilder
         - new groovy.json.JsonBuilder java.lang.Object
         - new groovy.json.JsonSlurperClassic
@@ -152,7 +149,6 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods iterator java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods iterator java.lang.Object[]
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.lang.StringBuffer java.lang.Object
-        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods max java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.util.List java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.util.List java.util.Collection
@@ -163,7 +159,6 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println java.lang.Object java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object java.lang.String java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods readLines java.lang.String
-        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods removeElement java.util.Collection java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods reverse java.util.List
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods sort java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods split java.lang.String
@@ -173,4 +168,5 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toSorted java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.EncodingGroovyMethods encodeBase64 byte[]
         - staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object
-        - staticMethod org.jenkinsci.plugins.workflow.cps.Safepoint safepoint
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods max java.util.Collection
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods removeElement java.util.Collection java.lang.Object
