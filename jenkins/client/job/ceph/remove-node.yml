@@ -32,6 +32,10 @@ parameters:
               type: string
               description: Remove only those OSDs at HOST (comma-separated list or *). Leave empty if you going to remove a whole osd node. Only relevant with OSD node
               default: ''
+            OSD_NODE_IS_DOWN:
+              type: boolean
+              description: Remove unavailable (offline) osd node from cluster, provided in HOST parameter
+              default: 'false'
             CLUSTER_FLAGS:
               type: string
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)

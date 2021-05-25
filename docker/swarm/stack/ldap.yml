@@ -32,7 +32,7 @@ parameters:
               # https://github.com/osixia/docker-openldap/issues/59
               command: --copy-service
               environment:
-                HOSTNAME: ldap01.${_param:openldap_domain}
+                HOSTNAME: ldap01
                 LDAP_ORGANISATION: "${_param:openldap_organisation}"
                 LDAP_DOMAIN: "${_param:openldap_domain}"
                 LDAP_ADMIN_PASSWORD_FILE: /run/secrets/openldap-admin
