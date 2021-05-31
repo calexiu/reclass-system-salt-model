@@ -1,0 +1,28 @@
+parameters:
+  linux:
+    system:
+      user:
+        deremeev:
+          email: deremeev@mirantis.com
+          enabled: true
+          full_name: Eremeev Mitya
+          home: /home/deremeev
+          name: deremeev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        deremeev:
+          enabled: true
+          public_keys:
+          - key: >
+              ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQ606VX7rs7Jd5pMBeZiLGRooK+J
+              vKC55+lSvFOsVr5MnWNmSNFtN1Lt1jKVoX22ZYnWnp7RmWWSkLtv43KZ46EsNMZUCd
+              lZOj9Md+7/T7EVQV4PpSJBCgrHSQ6TmQCzPBiGHZ0AvrHRrgKDA7nTGeYotbYVIgd8
+              PAMPXwPRxrc6tUQ2cXT8gXXJBczrdZ8QCdg5/AThRVt7RBpXSq94F5XiPtYvrryzqg
+              7KqgVbF728FBnV9naQ6tMDwvVud6DMxPaGc9p9TLaLxxLXLh4FrDrB2P7SvwnCdLEs
+              9yRQ6AWcr2HqWZLUXRDwWr/EFafG4SCFxCsUJUl5lF0frJ+dOl88OWSzHkrkSLmmTc
+              oYAoZvMoaH05V/U2s02gSilPyIwADKtk3UGGHPA7N4XIAcrjh3krJUsXqKzbDv6MKq
+              BTT9P85Ecw20OjqyVH+IzB4DuVDFX3YzoU1SQI8LfFgg7O8gJy7R/HSJaQCVMssGeJ
+              K3JQ3JxyJe5kRevLV9zsBRs= deremeev@mirantis.com
+          user: ${linux:system:user:deremeev}
