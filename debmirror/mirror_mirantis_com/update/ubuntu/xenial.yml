@@ -94,7 +94,6 @@ parameters:
             11: --exclude='(desktop|mate|cinnamon|xubuntu|kubuntu|lubuntu)-*'
             16: "--exclude='flashplugin*'"
             17: --exclude='(unity|gnome).*'
-            20: "--exclude='openjdk-*-(dbg|demo|source).*'"
             22: "--exclude='(kde|ubuntu|xfce4|sabily|sugar).*artwork*'"
             23: "--exclude='ubuntu-touch*'"
             24: "--exclude='remmina*'"
@@ -124,7 +123,6 @@ parameters:
             98: --exclude='(-|_)dbg(_|-)'
             99: --exclude='mythbuntu|network-manager-applet|debian-junior|game-music-emu|fp-units-castle-game-engine|asio|unidic-mecab|zope\.'
             100: --exclude='kineticstools|juju-(deployer|mongo|core)|felix-latin|fonts-(yozvox-yozfont|nanum|roboto|baekmuk|arphic-.*|takao|noto-cjk|ipamj-mincho)|insighttoolkit|axiom'
-            101: --exclude='openjdk-(8|9)(?!.*jre-headless.*)'
             # List of unused linux kernels and unsupported arch
             300: --exclude='.*-(alpha|arm64|powerpc|s390x|armel|armhf|arm-|aarch64-|sparc64|mips64|mips|ppc64el|mipsn32|hppa|m68k|sh4|mipsel|ppc64|m68hc1|mingw-w64)'
             301: --exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|gcp|.*azure-edge|.*oem/|.*euclid/)'
