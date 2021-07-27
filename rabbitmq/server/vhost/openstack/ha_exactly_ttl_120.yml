@@ -1,0 +1,10 @@
+parameters:
+  rabbitmq:
+    server:
+      host:
+        '/openstack':
+          policies:
+          - name: ha-exactly-ttl-120
+            pattern: '^(?!amq\.).*'
+            definition: '{"ha-mode": "exactly", "ha-sync-mode": "automatic", "ha-params": 2, "message-ttl": 120000}'
+            priority: 2

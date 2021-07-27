@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        tkhlivnyak:
+          email: tkhlivnyak@mirantis.com
+          enabled: true
+          full_name: Taras Khlivnyak
+          home: /home/tkhlivnyak
+          name: tkhlivnyak
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        tkhlivnyak:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChpyYEagNl9JbtuuDAf9eEIxHHwpGzJTOK4nYhxzRaHA8L2CKaoIL+vMGF6OIeEwXmSvYk7DFhQX4eZsLEF+vPgnjIVqWBBFyBaaC/bQVpZgGrIjYSsIGQjCh86ZdWQJl/GHswN39cU5ZyreiJ+m3iRmtnNr9JDC0hbrpxUdxaalEZ0cKyuOG4MHPSzoT0nAQAMlm3J3lToNipuB5v0hxhEcybFCT4ZcoJvbHkpftmkts95eDAPFQueMnzy0layChWMEd1ppUXQeV/VJ7TsxZov8luTLiDURpDJhgc6VoJ37rSBmunuAlHFYpkRpQS01vzby/rW1Nq+9eb2dHmIWClV7M40i9XQEzBk8MamyzzA9mqjSODIU117IWQHZUx3cGguWiosY4phdcMdwHbXhkwmuz8V04HCKHFwUvj1boKZ2pyPa01TDLLxhad3L+NCi4UoapsjrMGv+VJb9VWfJglEqO6VWpeZTeKquflzQZUMQiBq02XKaqoWV1LFr2AEEAOhZCNsNbLgQF79JwHCuzfPisDhQprFok+GJjUqrl6py25/GzItFZW+5N/o/onMw6VG8fVS2qlDccESKbNykUwXZhHPu36LaU9FYIamM3vZ+kJY//LqgHf6gIU5uHTikYUDd6FqW7Mb/a207K5O3uip5qH1XkNi3pql/Pi7UcOow== tkhlivnyak@mirantis.com
+          user: ${linux:system:user:tkhlivnyak}
