@@ -29,7 +29,7 @@ parameters:
       database:
         engine: mysql
         host: ${_param:openstack_database_address}
-        port: 3306
+        port: ${_param:mysql_nova_port}
         name: nova
         user: ${_param:mysql_nova_username}
         password: ${_param:mysql_nova_password}
