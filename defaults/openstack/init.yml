@@ -54,6 +54,7 @@ parameters:
     cinder_image_conversion_dir_path: /var/tmp/cinder/conversion
     # Nova
     mysql_nova_username: nova
+    mysql_nova_port: 3307
     keystone_nova_username: nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
@@ -183,6 +184,7 @@ parameters:
     keystone_murano_username: murano
     # Neutron
     mysql_neutron_username: neutron
+    mysql_neutron_port: 3308
     keystone_neutron_username: neutron
     neutron_old_version: ${_param:openstack_old_version}
     neutron_version: ${_param:openstack_version}
@@ -261,6 +263,8 @@ parameters:
     keystone_tacker_username: tacker
     # HAproxy
     haproxy_openstack_web_bind_port: ${_param:horizon_public_port}
+    haproxy_neutron_db_proxy_enabled: True
+    haproxy_nova_db_proxy_enabled: True
     #
     # haproxy_openstack_web_sticks_params is defined for SSL by default
     # if cluster_protocolr HTTP is going to be used then haproxy_openstack_web_sticks_params

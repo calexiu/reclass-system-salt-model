@@ -1,6 +1,3 @@
-classes:
-- system.haproxy.proxy.listen.openstack.galera.mysql_nova_proxy
-- system.haproxy.proxy.listen.openstack.galera.mysql_neutron_proxy
 parameters:
   _param:
     haproxy_params_check: 'check port 9200'
@@ -10,20 +7,21 @@ parameters:
         server: 28810s
         client: 28810s
       listen:
-        mysql_cluster:
+        mysql_cluster_nova_conn:
+          enabled: ${_param:haproxy_nova_db_proxy_enabled}
           type: mysql
           service_name: mysql
           balance: first
           binds:
           - address: ${_param:cluster_vip_address}
-            port: 3306
+            port: ${_param:mysql_nova_port}
           servers:
-          - name: ${_param:cluster_node01_hostname}
-            host: ${_param:cluster_node01_address}
-            port: 3306
-            params: ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3 on-marked-down shutdown-sessions
           - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
+            port: 3306
+            params: ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3 on-marked-down shutdown-sessions
+          - name: ${_param:cluster_node01_hostname}
+            host: ${_param:cluster_node01_address}
             port: 3306
             params: backup ${_param:haproxy_params_check} inter 20s fastinter 2s downinter 2s rise 3 fall 3 on-marked-down shutdown-sessions
           - name: ${_param:cluster_node03_hostname}
