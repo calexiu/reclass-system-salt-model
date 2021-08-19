@@ -6,6 +6,9 @@ parameters:
     haproxy_params_check: 'check port 9200'
   haproxy:
     proxy:
+      global:
+        maxconn: 99999
+      maxconn: 99999
       timeout:
         server: 28810s
         client: 28810s
