@@ -29,3 +29,4 @@ parameters:
               backend: ${_param:openstack_gateway_backend_image}
               size: openstack.gateway
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_gateway}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
