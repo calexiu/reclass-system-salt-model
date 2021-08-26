@@ -28,3 +28,4 @@ parameters:
               backend: ${_param:openstack_upgrade_backend_image}
               size: openstack.upgrade
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_upgrade}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
