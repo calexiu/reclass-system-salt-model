@@ -13,6 +13,8 @@ parameters:
     jenkins_gerrit_credentials: "gerrit"
   jenkins:
     client:
+      timestamper:
+        enabled: true
       globalenvprop:
         OFFLINE_DEPLOYMENT:
           value: ${_param:jenkins_offline_deployment}
