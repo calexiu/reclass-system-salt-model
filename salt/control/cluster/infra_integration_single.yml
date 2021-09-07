@@ -29,3 +29,4 @@ parameters:
               backend: ${_param:infra_integration_backend_image}
               size: infra.integration
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_integration}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
