@@ -13,6 +13,8 @@ parameters:
     jenkins_gerrit_credentials: "gerrit"
   jenkins:
     client:
+      timestamper:
+        enabled: true
       master:
         host: ${_param:jenkins_master_host}
         port: ${_param:jenkins_master_port}
