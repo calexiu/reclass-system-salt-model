@@ -106,3 +106,4 @@ parameters:
         protocol: ${_param:cluster_internal_protocol}
       metadata:
         password: ${_param:metadata_password}
+      update_cells: ${_param:nova_control_update_cells}

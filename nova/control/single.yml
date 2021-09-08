@@ -51,3 +51,4 @@ parameters:
           enabled: ${_param:nova_memcache_security_enabled}
           strategy: ${_param:openstack_memcache_security_strategy}
           secret_key: ${_param:nova_memcache_secret_key}
+      update_cells: ${_param:nova_control_update_cells}
