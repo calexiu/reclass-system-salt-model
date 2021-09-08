@@ -55,6 +55,7 @@ parameters:
     # Nova
     mysql_nova_username: nova
     mysql_nova_port: 3307
+    nova_control_update_cells: True
     keystone_nova_username: nova
     nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     nova_memcache_secret_key: ''
