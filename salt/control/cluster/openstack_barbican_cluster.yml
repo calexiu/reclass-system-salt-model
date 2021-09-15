@@ -29,7 +29,7 @@ parameters:
               backend: ${_param:openstack_barbican_backend_image}
               size: openstack.barbican
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             kmn02:
               name: ${_param:openstack_barbican_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -37,7 +37,7 @@ parameters:
               backend: ${_param:openstack_barbican_backend_image}
               size: openstack.barbican
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             kmn03:
               name: ${_param:openstack_barbican_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
@@ -45,4 +45,4 @@ parameters:
               backend: ${_param:openstack_barbican_backend_image}
               size: openstack.barbican
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_barbican}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

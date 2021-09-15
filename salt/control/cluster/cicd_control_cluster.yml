@@ -29,7 +29,7 @@ parameters:
               backend: ${_param:cicd_control_backend_image}
               size: cicd.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             cid02:
               name: ${_param:cicd_control_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -37,7 +37,7 @@ parameters:
               backend: ${_param:cicd_control_backend_image}
               size: cicd.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             cid03:
               name: ${_param:cicd_control_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
@@ -45,4 +45,4 @@ parameters:
               backend: ${_param:cicd_control_backend_image}
               size: cicd.control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_cicd_control}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

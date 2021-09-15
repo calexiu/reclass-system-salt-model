@@ -28,4 +28,4 @@ parameters:
               backend: ${_param:openstack_billing_backend_image}
               size: openstack.billing
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_billing}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

@@ -29,4 +29,4 @@ parameters:
               backend: ${_param:openstack_baremetal_backend_image}
               size: openstack.baremetal
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_openstack_baremetal}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
