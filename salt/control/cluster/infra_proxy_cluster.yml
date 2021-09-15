@@ -29,7 +29,7 @@ parameters:
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             prx02:
               name: ${_param:openstack_proxy_node01_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -37,4 +37,4 @@ parameters:
               backend: ${_param:infra_proxy_backend_image}
               size: infra.proxy
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_proxy}
-              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_model}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
