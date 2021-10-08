@@ -28,3 +28,4 @@ parameters:
               backend: ${_param:infra_storage_backend_image}
               size: infra.storage
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_storage}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

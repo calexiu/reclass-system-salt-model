@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vmarkov:
+          email: vmarkov@mirantis.com
+          enabled: true
+          full_name: Vadym Markov
+          home: /home/vmarkov
+          name: vmarkov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vmarkov:
+          enabled: true
+          public_keys:
+          - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhZ34Qi4Khp2x85CL8brFdw9ZzAQ628a697oX7uHwcz vmarkov@mirantis.com
+          user: ${linux:system:user:vmarkov}

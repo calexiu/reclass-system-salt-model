@@ -29,6 +29,7 @@ parameters:
               backend: ${_param:stacklight_telemetry_backend_image}
               size: stacklight.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             mtr02:
               name: ${_param:stacklight_telemetry_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -36,6 +37,7 @@ parameters:
               backend: ${_param:stacklight_telemetry_backend_image}
               size: stacklight.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             mtr03:
               name: ${_param:stacklight_telemetry_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
@@ -43,3 +45,4 @@ parameters:
               backend: ${_param:stacklight_telemetry_backend_image}
               size: stacklight.telemetry
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_stacklight_telemetry}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

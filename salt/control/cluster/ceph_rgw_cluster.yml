@@ -29,6 +29,7 @@ parameters:
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             rgw02:
               name: ${_param:ceph_rgw_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -36,6 +37,7 @@ parameters:
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             rgw03:
               name: ${_param:ceph_rgw_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
@@ -43,3 +45,4 @@ parameters:
               backend: ${_param:ceph_rgw_backend_image}
               size: ceph.rgw
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_ceph_rgw}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

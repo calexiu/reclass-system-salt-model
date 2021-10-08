@@ -30,6 +30,7 @@ parameters:
               backend: ${_param:infra_idm_backend_image}
               size: infra.idm
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_idm}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             idm02:
               name: ${_param:infra_idm_node02_hostname}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
@@ -37,6 +38,7 @@ parameters:
               backend: ${_param:infra_idm_backend_image}
               size: infra.idm
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_idm}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}
             idm03:
               name: ${_param:infra_idm_node03_hostname}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
@@ -44,3 +46,4 @@ parameters:
               backend: ${_param:infra_idm_backend_image}
               size: infra.idm
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_idm}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

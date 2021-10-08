@@ -28,3 +28,4 @@ parameters:
               backend: ${_param:infra_version_control_backend_image}
               size: infra.version_control
               cloud_init: ${_param:salt_control_cluster_node_cloud_init_infra_version_control}
+              cpu_mode: ${_param:salt_control_cluster_qemu_cpu_mode}

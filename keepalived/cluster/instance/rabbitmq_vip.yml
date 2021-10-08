@@ -8,9 +8,9 @@ parameters:
       vrrp_scripts:
         rabbitemq_vip:
           content: ${_param:keepalived_rabbitemq_vrrp_script_content}
-          interval: 10
+          interval: 30
           rise: 1
-          fall: 1
+          fall: 2
       instance:
         VIP:
           track_script: rabbitemq_vip

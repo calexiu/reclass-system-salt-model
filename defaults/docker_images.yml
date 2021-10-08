@@ -17,25 +17,24 @@ parameters:
     # mysql:5.6.51
     docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:2019.2.15"
     # jenkins:2.263.4
-    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.15"
-    docker_image_jenkins_jnlp_slave: "${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:2019.2.15"
+    docker_image_jenkins: "${_param:mcp_docker_registry}/mirantis/cicd/jenkins:2019.2.16"
+    docker_image_jenkins_jnlp_slave: "${_param:mcp_docker_registry}/mirantis/cicd/jnlp-slave:2019.2.16"
     # TODO: fix tag
-    docker_image_jenkins_ssh_slave: "${_param:mcp_docker_registry}/mirantis/cicd/ssh-slave:2019.2.15"
+    docker_image_jenkins_ssh_slave: "${_param:mcp_docker_registry}/mirantis/cicd/ssh-slave:2019.2.16"
     # model-generator
     docker_image_operations_api: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-api:2019.2.6"
     docker_image_operations_ui: "${_param:mcp_docker_registry}/mirantis/model-generator/operations-ui:2019.2.6"
     # OpenContrail
     opencontrail_docker_image_tag: "2019.2.14"
     # stacklight
-    docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta-web:2019.2.14"
-    # docker-dev-local.docker.mirantis.net/openstack-docker/grafana:20210402121624
+    docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:2019.2.16"
     docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.14"
-    docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:2019.2.14"
+    docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:2019.2.16"
     # docker-kaas-local.artifactory.mirantis.com/stacklight/prometheus-es-exporter:v0.5.1-20210323132924
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.14"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:2019.2.14"
-    # mirantis.azurecr.io/stacklight/sf-reporter:v0.1-20210607111404
-    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/sf-reporter:2019.2.15"
+    # http://docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20210920100947
+    docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/sf-reporter:2019.2.16"
     docker_image_prometheus_gainsight_elasticsearch: "${_param:mcp_docker_registry}/openstack-docker/gainsight_elasticsearch:2019.2.6"
     docker_image_prometheus_relay: "${_param:mcp_docker_registry}/openstack-docker/prometheus-relay:2019.2.11"
     docker_image_pushgateway: "${_param:mcp_docker_registry}/openstack-docker/pushgateway:2019.2.14"
@@ -51,16 +50,16 @@ parameters:
     docker_image_keycloak_server: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:4.5.0.Final"
     docker_image_keycloak_proxy: "${_param:mcp_docker_registry}/mirantis/external/jboss/keycloak:3.4.2.Final"
     # CVP
-    docker_image_cvp_sanity_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.15"
+    docker_image_cvp_sanity_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-sanity-checks:2019.2.16"
     docker_image_cvp_tempest: "${_param:mcp_docker_registry}/mirantis/cicd/ci-tempest:${_param:openstack_version}"
     docker_image_cvp_shaker_checks: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-shaker:2019.2.14"
     docker_image_cvp_rally: "${_param:mcp_docker_registry}/mirantis/cvp/cvp-rally:2019.2.5"
     docker_image_cvp_xrally: "${_param:mcp_docker_registry}/mirantis/external/xrally/xrally-openstack:0.11.2"
     # aptly
     docker_image_aptly:
-      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.14"
-      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.14"
-      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.14"
+      base: "${_param:mcp_docker_registry}/mirantis/cicd/aptly:2019.2.16"
+      public: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-public:2019.2.16"
+      publisher: "${_param:mcp_docker_registry}/mirantis/cicd/aptly-publisher:2019.2.16"
 
     # List of images, to be placed into offline image, during separate image build process
     # WARNING: registry|target_registry and names - must be exactly same as list above!
@@ -90,23 +89,23 @@ parameters:
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly:2019.2.14
+          name: aptly:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-public:2019.2.14
+          name: aptly-public:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: aptly-publisher:2019.2.14
+          name: aptly-publisher:2019.2.16
 
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jnlp-slave:2019.2.15
+          name: jnlp-slave:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: ssh-slave:2019.2.15
+          name: ssh-slave:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
-          name: jenkins:2019.2.15
+          name: jenkins:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: gerrit:2019.2.11
@@ -125,7 +124,7 @@ parameters:
           name: alertmanager:2019.2.14
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: alerta-web:2019.2.14
+          name: alerta:2019.2.16
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: pushgateway:2019.2.14
@@ -134,7 +133,7 @@ parameters:
           name: prometheus:2019.2.14
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: sf-reporter:2019.2.15
+          name: sf-reporter:2019.2.16
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: telegraf:2019.2.14
@@ -146,7 +145,7 @@ parameters:
           name: prometheus-relay:2019.2.11
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: grafana:2019.2.14
+          name: grafana:2019.2.16
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: heka:2019.2.6
@@ -186,7 +185,7 @@ parameters:
           name: cvp-shaker:2019.2.14
         - registry: ${_param:mcp_docker_registry}/mirantis/cvp
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cvp
-          name: cvp-sanity-checks:2019.2.15
+          name: cvp-sanity-checks:2019.2.16
         - registry: ${_param:mcp_docker_registry}/mirantis/external/xrally
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/xrally
           name: xrally-openstack:0.11.2

@@ -36,6 +36,7 @@ parameters:
       database:
         user: ${_param:mysql_neutron_username}
         password: ${_param:mysql_neutron_password}
+        port: ${_param:mysql_neutron_port}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_neutron_ssl_ca_file}
