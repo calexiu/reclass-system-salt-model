@@ -30,8 +30,8 @@ parameters:
     docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:2019.2.16"
     docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.14"
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:2019.2.16"
-    # docker-kaas-local.artifactory.mirantis.com/stacklight/prometheus-es-exporter:v0.5.1-20210323132924
-    docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.14"
+    # docker-dev-kaas-virtual.docker.mirantis.net/stacklight/prometheus-es-exporter:v0.14.0-20210812120726
+    docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.17"
     docker_image_prometheus: "${_param:mcp_docker_registry}/openstack-docker/prometheus:2019.2.14"
     # http://docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20210920100947
     docker_image_prometheus_gainsight: "${_param:mcp_docker_registry}/openstack-docker/sf-reporter:2019.2.16"
@@ -157,7 +157,7 @@ parameters:
           name: gainsight_elasticsearch:2019.2.6
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: prometheus-es-exporter:2019.2.14
+          name: prometheus-es-exporter:2019.2.17
 
         # OpenContrail 4.1
         - registry: ${_param:mcp_docker_registry}/opencontrail-oc41
