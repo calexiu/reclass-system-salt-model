@@ -1,19 +1,19 @@
 classes:
 - system.linux.system.sudo
+- system.openssh.server.team.members.deprecated.apodrepnyi
 - system.openssh.server.team.members.deprecated.kkushaev
 - system.openssh.server.team.members.deprecated.obryndzii
+- system.openssh.server.team.members.deprecated.ogrudev
+- system.openssh.server.team.members.deprecated.opetrenko
+- system.openssh.server.team.members.deprecated.oshyshko
 - system.openssh.server.team.members.deprecated.sgarbuz
 - system.openssh.server.team.members.deprecated.vnogin
-- system.openssh.server.team.members.apodrepnyi
 - system.openssh.server.team.members.avolkov
 - system.openssh.server.team.members.dteselkin
 - system.openssh.server.team.members.ikolodyazhny
 - system.openssh.server.team.members.iudovichenko
 - system.openssh.server.team.members.mkarpin
-- system.openssh.server.team.members.ogrudev
 - system.openssh.server.team.members.ohryhorov
-- system.openssh.server.team.members.opetrenko
-- system.openssh.server.team.members.oshyshko
 - system.openssh.server.team.members.pshchelo
 - system.openssh.server.team.members.deremeev
 - system.openssh.server.team.members.vdrok
