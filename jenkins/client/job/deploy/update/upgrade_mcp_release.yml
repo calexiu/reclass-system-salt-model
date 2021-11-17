@@ -65,3 +65,38 @@ parameters:
               type: string
               default: '12'
               description: "Sets pipeline timeout in hours. Defaults to '12' if left empty."
+        pre-upgrade-verify:
+          type: workflow-scm
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Deploy - pre upgrade verify MCP Drivetrain"
+          scm:
+            remote_name: origin
+            refspec: "$MK_PIPELINES_REFSPEC"
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            script: pre-upgrade-verify.groovy
+            type: git
+            credentials: ${_param:jenkins_gerrit_credentials}
+            branch: FETCH_HEAD
+            wipe_workspace: True
+          param:
+            MK_PIPELINES_REFSPEC:
+              type: string
+              default: ""
+              description: "Version of mk-pipelines git repo to be used. Should be release/TARGET_MCP_VERSION or 2019.2.x for a specific MU"
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+              description: Credentials to the Salt API
+            PIPELINE_TIMEOUT:
+              type: string
+              default: '1'
+              description: "Sets pipeline timeout in hours. Defaults to '1' if left empty."
