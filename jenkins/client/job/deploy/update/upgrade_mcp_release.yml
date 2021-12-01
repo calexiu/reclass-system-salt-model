@@ -61,6 +61,7 @@ parameters:
                 APPLY_MODEL_WORKAROUNDS: true
                 # Next parameters added only for test purposes and not enabled by default
                 # RECLASS_SYSTEM_BRANCH: ''
+                ARCHIVE_RECLASS_INVENTORY: false
             PIPELINE_TIMEOUT:
               type: string
               default: '12'
