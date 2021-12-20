@@ -210,7 +210,7 @@ parameters:
     apache_proxy_openstack_octavia_retry: ${_param:apache_proxy_openstack_api_retry}
     # Formats for logs for openstack apache sites
     apache_site_openstack_api_log_format: >-
-      %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+      %v:%p %h %l %u [%{%d/%b/%Y %T}t.%{msec_frac}t %{%z}t] \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
     apache_site_openstack_aodh_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_barbican_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_cinder_log_format: ${_param:apache_site_openstack_api_log_format}
