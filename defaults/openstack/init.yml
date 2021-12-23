@@ -211,18 +211,15 @@ parameters:
     # Formats for logs for openstack apache sites
     apache_site_openstack_api_log_format: >-
       %v:%p %h %l %u [%{%d/%b/%Y %T}t.%{msec_frac}t %{%z}t] \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
-    apache_site_openstack_aodh_log_format: >-
-      %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
-    apache_site_openstack_barbican_log_format: >-
-      %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+    apache_site_openstack_aodh_log_format: ${_param:apache_site_openstack_api_log_format}
+    apache_site_openstack_barbican_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_cinder_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_gnocchi_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_horizon_log_format: >-
       %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
     apache_site_openstack_manila_log_format: ${_param:apache_site_openstack_api_log_format}
     apache_site_openstack_placement_log_format: ${_param:apache_site_openstack_api_log_format}
-    apache_site_openstack_panko_log_format: >-
-      %v:%p %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+    apache_site_openstack_panko_log_format: ${_param:apache_site_openstack_api_log_format}
     # Horizon
     # 'direct' mode will require cors on glance side to be enabled.
     horizon_images_upload_mode: 'direct'
