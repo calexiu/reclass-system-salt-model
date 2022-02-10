@@ -27,6 +27,7 @@ parameters:
     # RabbitMQ
     rabbitmq_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Galera
+    galera_mysql_version: '5.6'
     galera_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     # Openstack memcache
     openstack_memcached_server_bind_address: 0.0.0.0
