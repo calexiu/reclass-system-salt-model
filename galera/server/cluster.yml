@@ -4,3 +4,7 @@ classes:
 - system.keepalived.cluster.instance.galera_vip
 - system.galera.upgrade
 - system.galera.server.clustercheck
+parameters:
+  galera:
+    version:
+      mysql: ${_param:galera_mysql_version}
