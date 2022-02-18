@@ -25,17 +25,17 @@ parameters:
               default: "${_param:jenkins_salt_api_url}"
             ASK_CONFIRMATION:
               type: boolean
-              default: 'true'
+              default: 'false'
             BACKUP_SALTMASTER_AND_MAAS:
               type: boolean
               default: 'true'
             BACKUP_DOGTAG:
               type: boolean
-              default: 'true'
+              default: 'false'
             BACKUP_KEYSTONE_CREDENTIAL_KEYS:
               type: boolean
               default: 'true'
           trigger:
             timer:
-              enabled: false
+              enabled: true
               spec: "${_param:backup_min} ${_param:backup_hour} ${_param:backup_day_of_month} ${_param:backup_month} ${_param:backup_day_of_week}"
