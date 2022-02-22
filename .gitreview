@@ -2,3 +2,4 @@
 host=gerrit.mcp.mirantis.com
 port=29418
 project=salt-models/reclass-system.git
+defaultbranch=release/proposed/2019.2.0
