@@ -27,6 +27,10 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
+            UPDATE_TO_MYSQL57:
+              type: boolean
+              default: 'false'
+              description: "Set this flag if you are updating MySQL from 5.6 to 5.7"
             SHUTDOWN_CLUSTER:
               type: boolean
               default: 'false'
