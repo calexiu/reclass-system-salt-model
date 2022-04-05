@@ -21,6 +21,8 @@ classes:
 - system.openssh.server.team.members.vsaienko
 - system.openssh.server.team.members.mpolenchuk
 - system.openssh.server.team.members.dbiletskiy
+- system.openssh.server.team.members.aarefiev
+- system.openssh.server.team.members.efedorova
 parameters:
   _param:
     linux_system_user_sudo: true

@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        aarefiev:
+          email: aarefiev@mirantis.com
+          enabled: true
+          full_name: Anton Arefiev
+          home: /home/aarefiev
+          name: aarefiev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        aarefiev:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkcIuvfXgmAdpEfV063NwiuzU5LoUNQHc+Oqecw1dt3saetkhXNY1ahV5MtudzX0uJzmYytteORqCfXsyHWZ6NwuGmW6BbPcz8RRBAbe86u1GYFMkznEltQnNDuqyGx/adt6Oxsk9BqrOTSk4eblPCXTP5E+xRQO3snrp6vzL/ov5qX2Yl4EvpMLvO4WR53MMH1jDVfx+HgTyyqmOWD5YTfCx12nxYPe7bz/TQyWCbpKNS9+/LuorW4RiBOR8M9Pxlec0M90dzh0ke6F3SG4SEfa0MtnDZD8FOGQy6G64xIR03mx5V42RicAChpTyRQpr027gWt5JvN6znt6f236TUBZw5U42UrmeL9yHYzs+ckvr1D5XtNodIhaovaPJLsMusxLwIK1SJ/cJrpc99Jocjh/KsKgICc7xDTteYsAd50q0rr+4qMJ3HmF8qIIfhBwFJpadFSG2XJCF6av2kiH7PD718yDZaa/6hE+ZxGtHjCDJNriO0865HCoRPMXaw3iM= aarefiev@mirantis.com
+          user: ${linux:system:user:aarefiev}
