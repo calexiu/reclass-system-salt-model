@@ -15,5 +15,5 @@ parameters:
         mkarpin:
           enabled: true
           public_keys:
-          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcO+qMO4z5O75JmeoyHQKNjq72psAMO2lebEMl5MbgVs7BAOT3PChamRId3xhwX2X5R0vS1ZSgRm0XC4br2OpJ9DsBhOBbPRK/EyjAm5aTBW8eZZ69NDFam/hLJ6Xq+jZDdlBT8iK7CPxTJD+0wz1KqpIgYlUNkix5EEj2wfUAfw3j6lGiEVQ0Cpbejey9sYlUSitKcYs/EAX5byBBqkFCLL4/D77fLOIuWfDzAAStUR/wbOJnWNiIScifu4EUdcSdHra9RoQaRgo31ALq+BeYVpvqnyHTOw9t2q04sZVDN4anhUMAFh0n1CkbY/2HWpX/RYWt1bV6XtDeoCpsC5Ar nkarpin@nkarpin-pc
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJ5ZQkmO868RaxxbinJHsKjVY4cKbb7+HGUJKqaZRaeLrDISbE2xkf1CkbyMbACNIyFUvSJl/SjtdmBIy0nPbs1cOg6Xn+XBNlVqdbvCjG7UW9dpBpeNR3hzr72Z/bQBVl0l3RFbT0Gt0Ti3ZMIPePgRKWeX2YglX7zs45UmfYQlxSM74MEHTxmrDKDVCVnzltGiSNg+c1aM0AY0KVVxCQUWAoW4lNEqiFVKjTQW+HotZqiTYtvGP2XurB3ZkDofRMSCMluE2y8FadoNJ68Ox0WeBaaGOiQDy8CyicNYH326nkiZ8Ujcmfq51Fbp31SKkYejlp7HqaEPxlV6CJ3JNEC92Lhp/51+rpHA1wC6TK+fsUIEA/vzZTb/5YFrjkpc1nAGxjvCtKV5zyiYc92FMIO20nxgYj6Y21O08MCAn37nd8p0HzBvvLrkedVSSOxotPsoapouI/ObKN7AQGL1N8c/C11pxWvx2S5YwqcOMR7oEOaG1Jy/O4u2GAFRnr/0k= nkarpin@nkarpin-home
           user: ${linux:system:user:mkarpin}
