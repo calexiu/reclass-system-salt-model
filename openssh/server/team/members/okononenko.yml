@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        okononenko:
+          email: okononenko@mirantis.com
+          enabled: true
+          full_name: Oleksandr Kononenko
+          home: /home/okononenko
+          name: okononenko
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        okononenko:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1tfFKYbu5QSCnvqAxhLAY9We+lFLpkBB1tXMlVAUuqZEunumUuFuhHYmgWoDo6HQzSzmNCURFzgCYUPKDTFEiTa1lbsvZmyyB9Nq2IqkyWi8yr4M8X5/y6usS4plYQ/FtcIJgTeYmi+zp3FjdQxiar80P1jRETovehLqoHYx4N4/53wHDMROrONLkITuBISPlSMmM+DY22Tr6pCeQr5Sf0wFq7739+/+/s8RX6RWVuqh1FwcJ1qoN9YTJGSQ0RQOtbGaa38+cTtcwhBNTH2puzsayWzZhlU0lSuR0Qt3QyG1a71VAuR4M6XCDwwrXrbrlnysNWvMZJ0+JIuHU2QslFCftg3ahl65B/OUJ5sWTBPnNTxKB2aVMXxF6eAo0TW3MK/O6uQDA3+sJO/3nkxlDzODO4Yy61jquxTcEttwTSiKZRX4HzpdUYo+yumf1fFnUyeqUZY7ZYjRfpZvmzxQbz+feIbTug0LVom14/qQGurCCMqDGl/bQ/5W3c+S/wDE= okononenko@okononenko-pc
+          user: ${linux:system:user:okononenko}
