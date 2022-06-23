@@ -26,6 +26,7 @@ parameters:
           net.core.netdev_max_backlog: 261144
           net.ipv4.tcp_tw_reuse: 1
           kernel.panic: 60
+          kernel.unprivileged_userns_clone: 0
       cpu:
         governor: performance
       limit:
