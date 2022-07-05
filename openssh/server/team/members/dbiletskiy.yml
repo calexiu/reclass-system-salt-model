@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dbiletskiy:
+          email: dbiletskiy@mirantis.com
+          enabled: true
+          full_name: Denis Biletskiy
+          home: /home/dbiletskiy
+          name: dbiletskiy
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        dbiletskiy:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwW/ypCO2Q98Vh606YPXILbMCaMk7Af0qC7rT1gmuEnHaSNUht+v+mth+DXzc7t3eJmrdEfvH2C+qLUeHx61nh1LPsD8e+TkeHLKf+jiamiUzIpnCxTf9fCDlVIxQ5IJNe7/o1+7dUh7PgBCITASRRedeAoExHMZGgOgETo5r+uYi/ZgYyKQqyVptdwkdHoihmP0+Yy3GUH/u2jZ5lYjgz4nSfd5heEYkcwPkKFQui+0J4zQ46WPSUt3pcBdFwRnABqQS9oWeCMHQBpzfwuiTo0E7AhHI1r0WkPNF4p+r9dknZZ/VGxHXKCWRqGUOxRo5kqAOK75OM4sQQ47F7GSB4DS7UG1set8TDp6Q0J0werVlAQY7zP2UOQtuV5fs9/WbYbyu/oVY2dHsRQ/UaJl1nJgSWHW2ICgM7IRYAayTxpHsJBN5k1g64+OhWAHeZUqi5ekM+4AdRoGTgsrr56nGOeWPJ0NkEcqKHiM7KrzgG5EvyeLOY+IibnS7wEqCr5pc= den@denwnb
+          user: ${linux:system:user:dbiletskiy}
