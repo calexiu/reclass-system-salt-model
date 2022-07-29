@@ -27,7 +27,7 @@ parameters:
               default: salt
             HOST:
               type: string
-              description: HOST to remove from thecluster
+              description: HOST to remove from the cluster
             OSD:
               type: string
               description: Remove only those OSDs at HOST (comma-separated list or *). Leave empty if you going to remove a whole osd node. Only relevant with OSD node
