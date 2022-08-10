@@ -29,7 +29,7 @@ parameters:
     # stacklight
     # docker-prod-local.docker.mirantis.net/mcp/alerta:7.4.4-xenial-1650474694302
     docker_image_alerta: "${_param:mcp_docker_registry}/openstack-docker/alerta:2019.2.19"
-    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.14"
+    docker_image_alertmanager: "${_param:mcp_docker_registry}/openstack-docker/alertmanager:2019.2.21"
     docker_image_grafana: "${_param:mcp_docker_registry}/openstack-docker/grafana:2019.2.19"
     # docker-dev-kaas-local.docker.mirantis.net/stacklight/prometheus-es-exporter:v0.14.0-20220420134722
     docker_image_prometheus_es_exporter: "${_param:mcp_docker_registry}/openstack-docker/prometheus-es-exporter:2019.2.19"
@@ -122,7 +122,7 @@ parameters:
           # stacklight
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
-          name: alertmanager:2019.2.14
+          name: alertmanager:2019.2.21
         - registry: ${_param:mcp_docker_registry}/openstack-docker
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/openstack-docker
           name: alerta:2019.2.19
