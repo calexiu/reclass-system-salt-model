@@ -21,17 +21,17 @@ parameters:
     docker_image_keycloak_proxy_tag: "3.4.2.Final"
     docker_image_keycloak_server_tag: "4.5.0.Final"
     docker_image_mongodb_tag: "2019.2.6"
-    docker_image_mysql_tag: "2019.2.20"
+    docker_image_mysql_tag: "2019.2.21"
     docker_image_openldap_tag: "2019.2.19"
     docker_image_operations_api_tag: "2019.2.6"
     docker_image_operations_ui_tag: "2019.2.6"
-    docker_image_phpldapadmin_tag: "2019.2.20"
-    docker_image_postgresql_tag: "9.6.22-alpine"
+    docker_image_phpldapadmin_tag: "2019.2.21"
+    docker_image_postgresql_tag: "9.6.24-alpine"
     # docker-dev-kaas-local.docker.mirantis.net/stacklight/prometheus-es-exporter:v0.14.0-20220420134722
     docker_image_prometheus_es_exporter_tag: "2019.2.19"
     docker_image_prometheus_gainsight_elasticsearch_tag: "2019.2.6"
-    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20220419092138
-    docker_image_prometheus_gainsight_tag: "2019.2.20"
+    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20220823042322
+    docker_image_prometheus_gainsight_tag: "2019.2.21"
     docker_image_prometheus_relay_tag: "2019.2.11"
     docker_image_prometheus_tag: "2019.2.14"
     docker_image_pushgateway_tag: "2019.2.14"
