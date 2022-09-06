@@ -65,6 +65,8 @@ parameters:
     nova_upgrade_enabled: ${_param:openstack_upgrade_enabled}
     nova_instance_build_timeout: 3600
     nova_service_user_enabled: ${_param:openstack_service_user_enabled}
+    qemu_max_processes: 140000
+    qemu_max_files: 35000
     # Glance
     mysql_glance_username: glance
     keystone_glance_username: glance
