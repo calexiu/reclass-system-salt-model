@@ -44,7 +44,7 @@ parameters:
     docker_image_sf_notifier_tag: "2019.2.19"
     docker_image_visualizer_tag: "2019.2.6"
 
-    opencontrail_docker_image_tag: "2019.2.14"
+    opencontrail_docker_image_tag: "2019.2.22"
     # CI\CD
     docker_image_compose: "${_param:mcp_docker_registry}/mirantis/external/docker/compose:${_param:docker_image_compose_tag}"
     # 2.6.2 version, from 12/18/2108, differ from latest 2.6.2 upstream - update next cycle
