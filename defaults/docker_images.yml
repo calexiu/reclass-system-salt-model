@@ -1,11 +1,11 @@
 parameters:
   _param:
     # docker-prod-local.docker.mirantis.net/mcp/alerta:7.4.4-xenial-1650474694302
-    docker_image_alerta_tag: "2019.2.19"
+    docker_image_alerta_tag: "2019.2.22"
     docker_image_alertmanager_tag: "2019.2.21"
     docker_image_aptly_base_tag: "2019.2.19"
     docker_image_aptly_public_tag: "2019.2.19"
-    docker_image_aptly_publisher_tag: "2019.2.19"
+    docker_image_aptly_publisher_tag: "2019.2.22"
     docker_image_cockroachdb_tag: "v2.1.1"
     docker_image_compose_tag: "1.17.1"
     docker_image_cvp_rally_tag: "2019.2.5"
@@ -15,23 +15,23 @@ parameters:
     docker_image_cvp_xrally_tag: "0.11.2"
     docker_image_gerrit_tag: "2019.2.11"
     docker_image_grafana_tag: "2019.2.19"
-    docker_image_jenkins_jnlp_slave_tag: "2019.2.19"
-    docker_image_jenkins_ssh_slave_tag: "2019.2.20"
+    docker_image_jenkins_jnlp_slave_tag: "2019.2.22"
+    docker_image_jenkins_ssh_slave_tag: "2019.2.22"
     docker_image_jenkins_tag: "2019.2.19"
     docker_image_keycloak_proxy_tag: "3.4.2.Final"
     docker_image_keycloak_server_tag: "4.5.0.Final"
     docker_image_mongodb_tag: "2019.2.6"
-    docker_image_mysql_tag: "2019.2.21"
-    docker_image_openldap_tag: "2019.2.19"
+    docker_image_mysql_tag: "2019.2.22"
+    docker_image_openldap_tag: "2019.2.22"
     docker_image_operations_api_tag: "2019.2.6"
     docker_image_operations_ui_tag: "2019.2.6"
-    docker_image_phpldapadmin_tag: "2019.2.21"
-    docker_image_postgresql_tag: "9.6.24-alpine"
-    # docker-dev-kaas-local.docker.mirantis.net/stacklight/prometheus-es-exporter:v0.14.0-20220420134722
-    docker_image_prometheus_es_exporter_tag: "2019.2.19"
+    docker_image_phpldapadmin_tag: "2019.2.22"
+    docker_image_postgresql_tag: "2019.2.22"
+    # docker-dev-kaas-local.docker.mirantis.net/stacklight/prometheus-es-exporter:extra-xenial-1669116465768
+    docker_image_prometheus_es_exporter_tag: "2019.2.22"
     docker_image_prometheus_gainsight_elasticsearch_tag: "2019.2.6"
-    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20220823042322
-    docker_image_prometheus_gainsight_tag: "2019.2.21"
+    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-reporter:v0.1-20220916113234
+    docker_image_prometheus_gainsight_tag: "2019.2.22"
     docker_image_prometheus_relay_tag: "2019.2.11"
     docker_image_prometheus_tag: "2019.2.14"
     docker_image_pushgateway_tag: "2019.2.14"
@@ -40,8 +40,8 @@ parameters:
     docker_image_remote_agent_tag: "2019.2.17"
     docker_image_remote_collector_tag: "2019.2.6"
     docker_image_remote_storage_adapter_tag: "2019.2.6"
-    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-notifier:v0.3-20220420134728
-    docker_image_sf_notifier_tag: "2019.2.19"
+    # docker-dev-kaas-local.docker.mirantis.net/stacklight/sf-notifier:v0.3-20221103105502
+    docker_image_sf_notifier_tag: "2019.2.22"
     docker_image_visualizer_tag: "2019.2.6"
 
     opencontrail_docker_image_tag: "2019.2.22"
@@ -51,7 +51,7 @@ parameters:
     docker_image_registry: "${_param:mcp_docker_registry}/mirantis/external/registry:${_param:docker_image_registry_tag}"
     docker_image_visualizer: "${_param:mcp_docker_registry}/mirantis/external/visualizer:${_param:docker_image_visualizer_tag}"
     docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/cicd/openldap:${_param:docker_image_openldap_tag}"
-    docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:${_param:docker_image_postgresql_tag}"
+    docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/cicd/postgresql:${_param:docker_image_postgresql_tag}"
     # 3.4.13, from Feb 15, differ from 3.4.13 upstream verison, from March 14 - update next cycle
     docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/mongo:${_param:docker_image_mongodb_tag}"
     ###
@@ -121,8 +121,8 @@ parameters:
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: openldap:${_param:docker_image_openldap_tag}
         - registry: ${_param:mcp_docker_registry}/mirantis/external/library
-          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/external/library
-          name: postgres:${_param:docker_image_postgresql_tag}
+          target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
+          name: postgresql:${_param:docker_image_postgresql_tag}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: phpldapadmin:${_param:docker_image_phpldapadmin_tag}
