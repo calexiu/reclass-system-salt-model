@@ -29,6 +29,7 @@ classes:
 - system.openssh.server.team.members.yisakov
 - system.openssh.server.team.members.qwu
 - system.openssh.server.team.members.srudyka
+- system.openssh.server.team.members.kambrozy
 parameters:
   _param:
     linux_system_user_sudo: true

@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        kambrozy:
+          email: kambrozy@mirantis.com
+          enabled: true
+          full_name: Krzysztof Ambroży
+          home: /home/kambrozy
+          name: kambrozy
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        kambrozy:
+          enabled: true
+          public_keys:
+          - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJj6XDn+eDD02i9wC/tQF3WsEMPf2nQsbPoKAFuWVJS kambrozy@mirantis.com
+          user: ${linux:system:user:kambrozy}
