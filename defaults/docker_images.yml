@@ -120,7 +120,7 @@ parameters:
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: openldap:${_param:docker_image_openldap_tag}
-        - registry: ${_param:mcp_docker_registry}/mirantis/external/library
+        - registry: ${_param:mcp_docker_registry}/mirantis/cicd/
           target_registry: ${_param:default_local_mirrror_content:docker_client_registry_target_registry}/mirantis/cicd
           name: postgresql:${_param:docker_image_postgresql_tag}
         - registry: ${_param:mcp_docker_registry}/mirantis/cicd
