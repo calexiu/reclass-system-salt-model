@@ -30,6 +30,7 @@ classes:
 - system.openssh.server.team.members.qwu
 - system.openssh.server.team.members.srudyka
 - system.openssh.server.team.members.kambrozy
+- system.openssh.server.team.members.calexiu
 parameters:
   _param:
     linux_system_user_sudo: true
