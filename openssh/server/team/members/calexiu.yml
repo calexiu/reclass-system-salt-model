@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        pruzicka:
+          enabled: true
+          name: calexiu
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Costin Alexiu
+          home: /home/calexiu
+          email: calexiu@mirantis.com
+  openssh:
+    server:
+      user:
+        pruzicka:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7SvYPPjbTmzpBQ/Iwq/Ht5hge9UBeduBSeLg4HUYuWQ0Qk3zsTIcASaXk0+gW+UmS57x978cS4Ahd8jUaK5n4U+q9ex67DvrqaE5MORFe1dptqa4uy3xWVnEFWchks21Sot5oi67qyF6xIDsGUebGqZSk4yPmxGkhhMKEs840LumNZNmpSCA20qG+407OowsQVnzCCt5xbAQpMSIBvtnGqxK0KLJwD0FjaVhjSmODT9RBOttLzw7e3OUI+tOBKzoESoNaVfyJS37y1/MguN0pKuyBRQgXuWbNl/0ayodk/6Kls7jN6mLs3drwJWS13BQvpfwxueb7vTiWdx7su8IqILSiqbFGDbpjDU3T/nkIWnJ9c13MTad9OWHHdreJUD3Nbg3Kar/JUZ15jz9WNz/OY3no1++w2K0LqTVzCrOTYGYLF4lSX42sPcYmTzZSBYl3oqNQ4Yls4WsAft24lin+i7gu5S49iAQ7S7acZNiU0k+JOMPWYqAiWu1KcLG2umE= calexiu@calexiu-mbp13
+          user: ${linux:system:user:calexiu}
